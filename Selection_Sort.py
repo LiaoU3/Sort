@@ -13,7 +13,7 @@ def selection_sort(nums:list):
 def main():
     unsorted_list = [random.randint(0, 100) for _ in range(10)]
     print("Before Selection Sort\t: ", unsorted_list)
-    print("After Selevtion Sort\t: ", selection_sort(unsorted_list))
-
+    print("After Selection Sort\t: ", selection_sort(unsorted_list))
+    
 if __name__ =="__main__":
     main()
