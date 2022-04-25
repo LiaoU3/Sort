@@ -1,5 +1,8 @@
 import random
-def quicksort(nums, left, right):
+def quick_sort(nums):
+    return _sort(nums, 0, len(nums) - 1)
+
+def _sort(nums, left, right):
     if left < right:
         reference = nums[left]
         l = left
@@ -14,15 +17,15 @@ def quicksort(nums, left, right):
 
         nums[left], nums[r] = nums[r], nums[left]
 
-        quicksort(nums, left,   r-1)
-        quicksort(nums,  r+1, right)
+        _sort(nums, left,   r-1)
+        _sort(nums,  r+1, right)
         return nums
 
 def main():
     unsorted_list = [random.randint(0, 100) for _ in range(10)]
     print("Before Selection Sort\t: ", unsorted_list)
-    quicksort(unsorted_list, 0, len(unsorted_list) - 1)
-    print("After Selevtion Sort\t: ", quicksort(unsorted_list, 0, len(unsorted_list) - 1))
+    quick_sort(unsorted_list)
+    print("After Selevtion Sort\t: ", quick_sort(unsorted_list))
 
 if __name__ == '__main__':
     main()
